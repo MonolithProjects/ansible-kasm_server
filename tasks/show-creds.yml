@@ -1,0 +1,8 @@
+---
+- name: Read Login Credentials
+  shell: tail -16 kasm.log
+  register: kasm_cred
+
+- name: Display Login Credentials
+  debug:
+     var: kasm_cred.stdout_lines

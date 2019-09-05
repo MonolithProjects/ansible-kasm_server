@@ -1,0 +1,10 @@
+---
+- include_tasks: kasm-state.yml
+
+- include_tasks: unarchive-kasm.yml
+  when: kasm_exist.stdout == ""
+
+- include_tasks: install-kasm.yml
+  when: kasm_exist.stdout == ""
+
+- include_tasks: show-creds.yml
