@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  author: "Michal Muransky""
+  author: Michal Muransky
   description: Kasm server installation
   company: MonolithProjects
   license: "license (BSD, MIT)"
