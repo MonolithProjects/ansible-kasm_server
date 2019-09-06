@@ -8,6 +8,7 @@
   when: kasm_exist.stdout == ""
 
 - include_tasks: persistent-storage.yml
-  when: storage == "yes"
+  when: persistent_storage
 
 - include_tasks: show-creds.yml
+  when: display_creds
