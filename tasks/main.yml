@@ -7,4 +7,7 @@
 - include_tasks: install-kasm.yml
   when: kasm_exist.stdout == ""
 
+- include_tasks: persistent-storage.yml
+  when: storage == "yes"
+
 - include_tasks: show-creds.yml
