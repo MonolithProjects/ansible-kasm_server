@@ -40,5 +40,12 @@ Create users called `<kasm_user_name>[1-5]` (5 users per one Kasm server. For ex
 Each user will need it's own Kasm image to have persistent home folder.
 For each image setup the volume mapping.
 
-Volume Mappings (JSON)
+**Volume Mappings (JSON)**
+```
 {"/home/<replace for ansible_user>/share/<replace for kasm_user_name+index number>":{"mode":"rw","bind":"/home/kasm-user"}}
+```
+
+### Requirements:
+- docker
+- docker-compose
+- swap enabled 
