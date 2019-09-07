@@ -3,7 +3,7 @@
   file:
      state: directory
      recurse: yes
-     path: "/home/{{ansible_user}}/share/user{{ user_number + 1 }}"
+     path: "/home/{{ansible_user}}/share/{{ kasm_user_name }}{{ user_number + 1 }}"
      mode: '1777'
   with_indexed_items: "{{ groups['kasm_servers'] * 5 }}"
   loop_control:
