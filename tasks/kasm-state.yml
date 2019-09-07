@@ -1,5 +1,7 @@
 ---
 - name: Get Kasm containers info
-  shell: docker ps -f name=kasm |grep -v CONTAINER
+  shell: |
+      set -o pipefail
+      docker ps -f name=kasm |grep -v CONTAINER
   register: kasm_exist
   failed_when: kasm_exist.rc != 1 and kasm_exist.rc != 0
