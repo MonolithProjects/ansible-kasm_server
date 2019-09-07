@@ -27,7 +27,7 @@ This role will search for running Kasm docker containers. If there are not any, 
      - persistent_storage: True
 
   roles:
-     - ansible-kasm_server
+     - monolithprojects.kasm_server
 ```
 ---
 

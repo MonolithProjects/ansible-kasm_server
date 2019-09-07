@@ -7,10 +7,10 @@
 - include_tasks: kasm-state.yml
 
 - include_tasks: unarchive-kasm.yml
-  when: kasm_exist.stdout == ""
+  when: kasm_exist.stdout | length == 0
 
 - include_tasks: install-kasm.yml
-  when: kasm_exist.stdout == ""
+  when: kasm_exist.stdout | length == 0
 
 - include_tasks: persistent-storage.yml
   when: persistent_storage

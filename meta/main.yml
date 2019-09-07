@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   author: Michal Muransky
+  role_name: kasm_server
   description: Kasm server installation
   company: MonolithProjects
   license: "license (MIT)"
