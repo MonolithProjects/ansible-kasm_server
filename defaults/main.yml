@@ -1,0 +1,4 @@
+---
+kasm_user_name: "user"
+display_creds: True
+persistent_storage: False
