@@ -5,6 +5,6 @@
      recurse: yes
      path: "/home/{{ansible_user}}/share/{{ kasm_user_name }}{{ user_number + 1 }}"
      mode: '1777'
-  with_indexed_items: "{{ groups['kasm_servers'] * 5 }}"
+  with_indexed_items: "{{ groups['all'] * 5 }}"
   loop_control:
      index_var: user_number

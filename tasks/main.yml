@@ -1,5 +1,6 @@
 ---
 - include_tasks: kasm-state.yml
+  failed_when: kasm_package is not defined
 
 - include_tasks: unarchive-kasm.yml
   when: kasm_exist.stdout == ""
