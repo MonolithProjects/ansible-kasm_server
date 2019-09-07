@@ -48,4 +48,7 @@ For each image setup the volume mapping.
 ### Requirements:
 - docker
 - docker-compose
-- swap enabled 
+- swap enabled
+
+### License:
+- MIT
