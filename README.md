@@ -34,7 +34,7 @@ This role will search for running Kasm docker containers. If there are not any, 
 ### Manual steps for Kasm server configuration for persistent home folder
 
 #### Create users:
-Create users called `<kasm_user_name>[1-5]` (5 users per one Kasm server. For example in case of 2 Kasm servers, create `user[1-10]`)
+Login to the Kasm WebUI and create users called `<kasm_user_name>[1-5]` (5 users per one Kasm server. For example in case of 2 Kasm servers, create `user[1-10]`)
 
 #### Create a new image for each user:
 Each user will need it's own Kasm image to have persistent home folder.
