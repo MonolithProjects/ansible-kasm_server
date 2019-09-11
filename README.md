@@ -24,31 +24,16 @@ This role will search for running Kasm docker containers. If there are not any, 
      - kasm_package: kasm_release_1.5.0.3b363e.tar.gz
      - kasm_user_name: user
      - display_creds: True
-     - persistent_storage: True
 
   roles:
      - monolithprojects.kasm_server
 ```
 ---
 
-### Manual steps for Kasm server configuration for persistent home folder
-
-#### Create users:
-Login to the Kasm WebUI and create users called `<kasm_user_name>[1-5]` (5 users per one Kasm server. For example in case of 2 Kasm servers, create `user[1-10]`)
-
-#### Create a new image for each user:
-Each user will need it's own Kasm image to have persistent home folder.
-For each image setup the volume mapping.
-
-**Volume Mappings (JSON)**
-```
-{"/home/<replace for ansible_user>/share/<replace for kasm_user_name+index number>":{"mode":"rw","bind":"/home/kasm-user"}}
-```
-
 ### Requirements:
 - docker
 - docker-compose
-- swap enabled
+- swap space enabled
 
 ### License:
 - MIT
