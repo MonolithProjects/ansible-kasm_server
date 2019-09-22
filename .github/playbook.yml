@@ -1,0 +1,9 @@
+---
+- name: Install Hassio
+  hosts: all
+  become: yes
+  gather_facts: no
+  vars:
+    - supervisor_share: "/usr/share/hassio"   #Default
+    - privileged_mode: False   #Default
+    - version: latest   #Default

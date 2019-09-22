@@ -1,0 +1,21 @@
+name: Test build
+
+on:
+    push:
+        branches:
+            - master
+            - develop
+    schedule:
+        - cron: '0 4 * * 0'
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@master
+        - name: Install Ansible
+          run: |
+          pip install --no-cache-dir ansible
+        - name: Install Ansible
+          run: |
+          ansible-playbook .github/playbook.yml

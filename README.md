@@ -1,39 +1,31 @@
-# Kasm server installation
-[Kasm](https://www.kasmweb.com/) is desktop and browser isolation platform.  
+[![](https://github.com/MonolithProjects/ansible-hassio/workflows/Test%20build/badge.svg)](https://github.com/MonolithProjects/ansible-hassio/actions)  
 
-This role will search for running Kasm docker containers. If there are not any, role will install Kasm server. Optionally it can create a persistent storage for home folder of 5 users per one server (Community Kasm version allows maximum of 5 user sessions on one server)
-
-### Quick guide
-
-1. register at https://www.kasmweb.com/downloads.html and download the latest community version of the Kasm Server and place it into `playbooks/files/` directory
-2. define kasm servers in `inventory/hosts.ini`
-3. run `ansible-galaxy install -r inventory/requirements.yml`
-4. run `ansible-playbook site.yml`
-5. see the Kasm credentials in the ansible output. Login into the Kasm server WebUI (output of the installation log is in `~/kasm.log`)...
----
+This Ansible role installs Hass.io. Hass.io is an operating system that will take care of installing and updating Home Assistant, is managed from the Home Assistant UI, allows creating/restoring snapshots of your configuration and can easily be extended using Hass.io add-ons including Google Assistant and Let’s Encrypt.
 
 ### Playbook example:
 ```
 ---
-- name: Install KASM server with persistent storage
-  hosts: kasm_servers
+- name: Install Hassio
+  hosts: all
   become: yes
   gather_facts: no
-
   vars:
-     - kasm_package: kasm_release_1.5.0.3b363e.tar.gz
-     - kasm_user_name: user
-     - display_creds: True
+    - supervisor_share: "/usr/share/hassio"   #Default
+    - privileged_mode: False   #Default
+    - version: latest   #Default
 
   roles:
-     - monolithprojects.kasm_server
+     - monolithprojects.hassio
 ```
----
 
-### Requirements:
-- docker
-- docker-compose
-- swap space enabled
+## Requirements
+```
+docker-ce
+avahi
+dbus
+```
+**Note:** This Ansible role is currently only for systems with x86_64 CPU architecture
 
-### License:
-- MIT
+
+## License:
+- MIT  
