@@ -1,0 +1,11 @@
+---
+- name: Install KASM
+  shell: |
+      set -o pipefail
+      printf 'y\n' | sudo bash kasm_release/install.sh
+  register: kasm_install
+
+- name: Installation output into the file
+  copy:
+     content: "{{ kasm_install.stdout }}"
+     dest: "kasm.log"

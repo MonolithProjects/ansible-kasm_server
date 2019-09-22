@@ -1,2 +1,16 @@
 ---
-- include_tasks: install-hassio.yml
+- name: Fail when my_var is not defined
+  debug:
+    msg: "kasm_package is required"
+  failed_when: kasm_package is not defined
+
+- include_tasks: kasm-state.yml
+
+- include_tasks: unarchive-kasm.yml
+  when: kasm_exist.stdout | length == 0
+
+- include_tasks: install-kasm.yml
+  when: kasm_exist.stdout | length == 0
+
+- include_tasks: show-creds.yml
+  when: display_creds

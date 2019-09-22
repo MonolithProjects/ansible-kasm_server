@@ -1,0 +1,7 @@
+---
+- name: Unarchive the installation files
+  unarchive:
+     src: "files/{{ kasm_package }}"
+     dest: "/home/{{ ansible_user }}"
+     owner: "{{ ansible_user }}"
+     group: "{{ ansible_user }}"

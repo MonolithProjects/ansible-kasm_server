@@ -1,8 +1,8 @@
 ---
 galaxy_info:
   author: Michal Muransky
-  role_name: hassio
-  description: Hass.io server installation
+  role_name: kasm_server
+  description: Kasm server installation
   company: MonolithProjects
   license: "license (MIT)"
   min_ansible_version: 2.4
@@ -24,10 +24,10 @@ galaxy_info:
         - xenial
         - bionic
   galaxy_tags:
-    - hassio
-    - hass
-    - home
-    - automation
+    - kasm
+    - virtual
+    - desktop
+    - isolation
     - web
     - system
     - containers
