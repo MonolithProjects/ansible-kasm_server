@@ -1,3 +1,9 @@
+kasm_server
+===========
+
+<img src="https://img.shields.io/ansible/quality/43166?style=flat&logo=ansible"/> <img src="https://img.shields.io/ansible/role/d/43166"/> <img src="https://img.shields.io/github/v/release/MonolithProjects/ansible-kasm_server"/>  
+
+
 # Kasm server installation
 [Kasm](https://www.kasmweb.com/) is desktop and browser isolation platform.  
 
